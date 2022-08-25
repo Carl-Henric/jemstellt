@@ -37,7 +37,13 @@
     // document.write(resultat).html;
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
-  
+    if (avrundad < 40) {
+      document.getElementById("resultat").style.color = "red";
+  } else if (avrundad > 60) {
+      document.getElementById("resultat").style.color = "red";
+  } else {
+  document.getElementById("resultat").style.color = "black";
+}
   
   }
   </script>
