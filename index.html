@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testa jämställdheten</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css"> 
+
+</head>
+
+
+<body>
+<div class="yta">
+  <h2>Fyll i antalet nedan</h2>
+      <form>
+          Män
+          <input id="men" type="number" name="men">
+          Kvinnor
+          <input id="kvinnor" type="number" name="kvinnor">
+          <input type="button" value="Beräkna" onclick="doMath()" />
+        </form>
+        <h2 id="procent"></h2>
+        <h2 id="test"></h2>
+</div>
+
+<script>
+  function doMath() {
+    var men = document.getElementById('men').value;
+    var kvinnor = document.getElementById('kvinnor').value;
+    
+    var resultat = parseInt(men) / parseInt(kvinnor) * 100;
+    var avrundad = resultat.toFixed(0)
+    // document.write(resultat).html;
+    document.getElementById("test").innerHTML = avrundad + "%";
+  }
+  </script>
+    
+</body>
+</html>
