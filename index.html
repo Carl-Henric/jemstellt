@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testa jämställdheten</title>
     <link rel="stylesheet" href="css/style.css" type="text/css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
 
 </head>
 
 
 <body>
 <div class="yta">
-  <h2>Fyll i antalet nedan</h2>
+  <h2>Hur jämställt är det?</h2>
+  <h3>Fyll i antalet män respektive kvinnor för att se hur jämställt det här.</h3>
       <form>
           Män
           <input id="men" type="number" name="men">
@@ -20,8 +24,7 @@
           <input id="kvinnor" type="number" name="kvinnor">
           <input type="button" value="Beräkna" onclick="doMath()" />
         </form>
-        <h2 id="procent"></h2>
-        <h2 id="test"></h2>
+        <h2 id="resultat"></h2>
 </div>
 
 <script>
@@ -32,7 +35,10 @@
     var resultat = parseInt(men) / parseInt(kvinnor) * 100;
     var avrundad = resultat.toFixed(0)
     // document.write(resultat).html;
-    document.getElementById("test").innerHTML = avrundad + "%";
+    document.getElementById("resultat").innerHTML = avrundad + "%";
+
+  
+  
   }
   </script>
     
