@@ -18,14 +18,16 @@
   <h2>Hur jämställt är det?</h2>
   <h3>Fyll i antalet män respektive kvinnor för att se hur jämställt det här.</h3>
       <form>
-          Män
-          <input id="men" type="number" name="men">
-          Kvinnor
-          <input id="kvinnor" type="number" name="kvinnor">
+          
+          <input id="men" type="number" name="men" placeholder="Män">
+        
+          <input id="kvinnor" type="number" name="kvinnor" placeholder="Kvinnor">
           <input type="button" value="Beräkna" onclick="doMath()" />
         </form>
         <h2 id="resultat"></h2>
+        <h2 id="text"></h2>
 </div>
+
 
 <script>
   function doMath() {
@@ -38,11 +40,11 @@
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
     if (avrundad < 40) {
-      document.getElementById("resultat").style.color = "red";
+      document.getElementById("text").innerHTML = "Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
   } else if (avrundad > 60) {
-      document.getElementById("resultat").style.color = "red";
+      document.getElementById("text").innerHTML = "Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på ";
   } else {
-  document.getElementById("resultat").style.color = "black";
+  document.getElementById("text").style.color = "Snyggt! <br/> Det är jämställt. ";
 }
   
   }
