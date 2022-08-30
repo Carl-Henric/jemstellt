@@ -4,11 +4,12 @@ h2 {
     font-family: roboto;
     font-weight: 800;
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 .yta {
     width: 50%;
-    background-color: beige;
+    background-color: white;
     margin: auto;
     padding: 20px;
     text-align: center;
@@ -25,3 +26,5 @@ h3 {
     font-family: roboto;
     font-weight: 400;
 }
+
+

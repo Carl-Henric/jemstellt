@@ -16,38 +16,51 @@
 <body>
 <div class="yta">
   <h2>Hur jämställt är det?</h2>
-  <h3>Fyll i antalet män respektive kvinnor för att se hur jämställt det här.</h3>
+  <h3>Fyll i antal av det ena könet i den vänstra rutan och det totala antalet människor i den andra. </h3>
       <form>
           
-          <input id="men" type="number" name="men" placeholder="Män">
+          <input id="men" type="number" name="men" placeholder="Samma kön">
         
-          <input id="kvinnor" type="number" name="kvinnor" placeholder="Kvinnor">
-          <input type="button" value="Beräkna" onclick="doMath()" />
+          <input id="kvinnor" type="number" name="kvinnor" placeholder="Totalt">
+          <input type="button" value="Visa resultat" onclick="doMath(), knapp()" />
         </form>
         <h2 id="resultat"></h2>
-        <h2 id="text"></h2>
+        <h3 id="text"></h3>
 </div>
 
 
 <script>
+
+
+
+
+
   function doMath() {
     var men = document.getElementById('men').value;
     var kvinnor = document.getElementById('kvinnor').value;
+    var total = parseInt(men) + parseInt(kvinnor)
+
+    console.log(men/total);
     
+
     var resultat = parseInt(men) / parseInt(kvinnor) * 100;
     var avrundad = resultat.toFixed(0)
     // document.write(resultat).html;
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
     if (avrundad < 40) {
-      document.getElementById("text").innerHTML = "Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+      document.getElementById("resultat").innerHTML = avrundad + "% <br/> Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
   } else if (avrundad > 60) {
       document.getElementById("text").innerHTML = "Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på ";
   } else {
-  document.getElementById("text").style.color = "Snyggt! <br/> Det är jämställt. ";
+  document.getElementById("resultat").style.color = "Snyggt! <br/> Det är jämställt. ";
+  
 }
+
+
   
   }
+
   </script>
     
 </body>
