@@ -14,7 +14,7 @@
 
 
 <body>
-<div class="yta">
+<div id="yta">
   <h2>Hur jämställt är det?</h2>
   <h3>Fyll i antal av det ena könet i den vänstra rutan och det totala antalet människor i den andra. </h3>
       <form>
@@ -49,11 +49,18 @@
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
     if (avrundad < 40) {
-      document.getElementById("resultat").innerHTML = avrundad + "% <br/> Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+      document.getElementById("resultat").innerHTML = avrundad + "% <br/> Tyvärr inte jämtställt.",
+      document.getElementById("yta").style.backgroundColor = "red",
+      document.getElementById("text").innerHTML =  "Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+      
+
   } else if (avrundad > 60) {
       document.getElementById("text").innerHTML = "Tyvärr inte jämtställt. </br> Gränsen för jämställdhet är mellan 40-60%. Läs mer på ";
   } else {
-  document.getElementById("resultat").style.color = "Snyggt! <br/> Det är jämställt. ";
+  document.getElementById("resultat").innerHTML  = "Snyggt! <br/> Det är jämställt. ",
+  document.getElementById("yta").style.backgroundColor = "green";
+
+  
   
 }
 
