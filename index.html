@@ -16,13 +16,13 @@
 
 <body>
 <div id="yta">
-  <h1>Hur jämställt är det?</h1>
+  <h1>Jämtställdhetskalkylatorn</h1>
   <p>Fyll i antal av det ena könet i den vänstra rutan och det totala antalet människor i den andra. </p>
       <form>
           
-          <input id="men" type="number" name="men" placeholder="Samma kön">
+          <input id="men" type="number" name="men" placeholder="Samma kön" required>
         
-          <input id="kvinnor" type="number" name="kvinnor" placeholder="Totalt">
+          <input id="kvinnor" type="number" name="kvinnor" placeholder="Totalt" required>
           <input type="button" value="Visa resultat" onclick="doMath(), knapp()" />
         </form>
         <h2 id="resultat"></h2>
@@ -50,19 +50,19 @@
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
     if (avrundad < 40) {
-      document.getElementById("resultat").innerHTML = avrundad + "% <br/>",
+      document.getElementById("resultat").innerHTML = avrundad + "% Jämlikt <br/>",
       document.body.style.backgroundColor = "#DA0000";
-      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
       
 
   } else if (avrundad > 60) {
       document.getElementById("resultat").innerHTML = avrundad + "% </br>",
       document.body.style.backgroundColor = "#DA000";
-      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
   } else {
-  document.getElementById("resultat").innerHTML  = avrundad + "% <br/> ",
+  document.getElementById("resultat").innerHTML  = avrundad + "% Jämtställt<br/> ",
   document.body.style.backgroundColor = "#009322",
-  document.getElementById("text").innerHTML =  "Snyggt! Det är jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
+  document.getElementById("text").innerHTML =  "Snyggt! Det är jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
 
 
   

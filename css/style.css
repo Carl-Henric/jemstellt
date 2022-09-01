@@ -2,7 +2,7 @@
 
 h1 {
     font-family: 'Fredoka One', cursive;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
 
 }
@@ -27,11 +27,11 @@ p {
 }
 
 body {
-    background-color: black;
+    background-color: darkgray;
 }
 
 #yta {
-    width: 100%;
+    width: 50%;
     height: 100%;
     margin: auto;
     padding: 20px;
@@ -47,7 +47,10 @@ form input {
     border: none;
     border-radius: 10px;
     box-shadow: 10px 10px;
-    width: 10%;
+}
+
+button {
+    font-size: 10px;
 }
 
 form input:hover {
