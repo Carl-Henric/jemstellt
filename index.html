@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="css/style.css" type="text/css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,400;0,700;0,900;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto:ital,wght@0,400;0,700;0,900;1,900&family=Silkscreen&display=swap" rel="stylesheet">    <script src="https://kit.fontawesome.com/c607c8a100.js" crossorigin="anonymous"></script>
 
     
 </head>
@@ -16,14 +17,14 @@
 
 <body>
 <div id="yta">
-  <h1>Jämtställdhetskalkylatorn</h1>
+  <h1>Testa er jämställdhet</h1>
   <p>Fyll i antal av det ena könet i den vänstra rutan och det totala antalet människor i den andra. </p>
       <form>
           
-          <input id="men" type="number" name="men" placeholder="Samma kön" required>
+          <input id="men" type="number" name="men" placeholder="Antal" required>
         
           <input id="kvinnor" type="number" name="kvinnor" placeholder="Totalt" required>
-          <input type="button" value="Visa resultat" onclick="doMath(), knapp()" />
+          <input id="knapp" type="button" value="Testa" onclick="doMath(), knapp()" />
         </form>
         <h2 id="resultat"></h2>
         <h3 id="text"></h3>
@@ -50,19 +51,19 @@
     document.getElementById("resultat").innerHTML = avrundad + "%";
 
     if (avrundad < 40) {
-      document.getElementById("resultat").innerHTML = avrundad + "% Jämlikt <br/>",
+      document.getElementById("resultat").innerHTML = avrundad + "% = ej jämställt",
       document.body.style.backgroundColor = "#DA0000";
-      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
+      document.getElementById("text").innerHTML =  "En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
       
 
   } else if (avrundad > 60) {
-      document.getElementById("resultat").innerHTML = avrundad + "% </br>",
-      document.body.style.backgroundColor = "#DA000";
-      document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
+      document.getElementById("resultat").innerHTML = avrundad + "% = Ej jämställt",
+      document.body.style.backgroundColor = "#DA0000";
+      document.getElementById("text").innerHTML =  "En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
   } else {
-  document.getElementById("resultat").innerHTML  = avrundad + "% Jämtställt<br/> ",
-  document.body.style.backgroundColor = "#009322",
-  document.getElementById("text").innerHTML =  "Snyggt! Det är jämställt. En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
+  document.getElementById("resultat").innerHTML  = avrundad + "% = Jämställt!",
+  document.body.style.backgroundColor = "green",
+  document.getElementById("text").innerHTML =  "En jämn könsfördelning anses råda då andelen kvinnor respektive män i en grupp är 40/60 procent eller jämnare. - Jämställdhetsmyndigheten";
 
 
   
