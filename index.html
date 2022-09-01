@@ -51,17 +51,17 @@
 
     if (avrundad < 40) {
       document.getElementById("resultat").innerHTML = avrundad + "% <br/>",
-      document.body.style.backgroundColor = "red";
+      document.body.style.backgroundColor = "#DA0000";
       document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
       
 
   } else if (avrundad > 60) {
       document.getElementById("resultat").innerHTML = avrundad + "% </br>",
-      document.body.style.backgroundColor = "red";
+      document.body.style.backgroundColor = "#DA000";
       document.getElementById("text").innerHTML =  "Tyvärr inte jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
   } else {
   document.getElementById("resultat").innerHTML  = avrundad + "% <br/> ",
-  document.body.style.backgroundColor = "green",
+  document.body.style.backgroundColor = "#009322",
   document.getElementById("text").innerHTML =  "Snyggt! Det är jämställt. Gränsen för jämställdhet är mellan 40-60%. Läs mer på:";
 
 
